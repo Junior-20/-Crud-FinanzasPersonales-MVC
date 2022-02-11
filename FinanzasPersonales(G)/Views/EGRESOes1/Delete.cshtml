@@ -1,0 +1,64 @@
+﻿@model FinanzasPersonales_G_.EGRESO
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>EGRESO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Decripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Decripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EGRESO_RENGLON.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EGRESO_RENGLON.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EGRESO_TIPO.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EGRESO_TIPO.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAGO_TIPO.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAGO_TIPO.Descripcion)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

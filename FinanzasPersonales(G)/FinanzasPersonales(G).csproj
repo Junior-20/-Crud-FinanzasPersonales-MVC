@@ -170,10 +170,20 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\EGRESOes1Controller.cs" />
+    <Compile Include="Controllers\EGRESOesController.cs" />
+    <Compile Include="Controllers\EGRESO_RENGLONController.cs" />
+    <Compile Include="Controllers\EGRESO_TIPOController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\INGRESOes1Controller.cs" />
+    <Compile Include="Controllers\INGRESOesController.cs" />
+    <Compile Include="Controllers\INGRESO_TIPOController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\PAGO_TIPOController.cs" />
     <Compile Include="Controllers\PROCESO_CORTEController.cs" />
     <Compile Include="Controllers\TRANSACIONsController.cs" />
+    <Compile Include="Controllers\USUARIOs1Controller.cs" />
+    <Compile Include="Controllers\USUARIOsController.cs" />
     <Compile Include="EGRESO.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -235,6 +245,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Fotos\BK22GQ32HVBHTE4H3BXHZILSOE.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Model1.Context.tt">
@@ -311,6 +322,41 @@
     <Content Include="Views\PROCESO_CORTE\Details.cshtml" />
     <Content Include="Views\PROCESO_CORTE\Edit.cshtml" />
     <Content Include="Views\PROCESO_CORTE\Index.cshtml" />
+    <Content Include="Views\EGRESO_TIPO\Create.cshtml" />
+    <Content Include="Views\EGRESO_TIPO\Delete.cshtml" />
+    <Content Include="Views\EGRESO_TIPO\Details.cshtml" />
+    <Content Include="Views\EGRESO_TIPO\Edit.cshtml" />
+    <Content Include="Views\EGRESO_TIPO\Index.cshtml" />
+    <Content Include="Views\INGRESO_TIPO\Create.cshtml" />
+    <Content Include="Views\INGRESO_TIPO\Delete.cshtml" />
+    <Content Include="Views\INGRESO_TIPO\Details.cshtml" />
+    <Content Include="Views\INGRESO_TIPO\Edit.cshtml" />
+    <Content Include="Views\INGRESO_TIPO\Index.cshtml" />
+    <Content Include="Views\EGRESO_RENGLON\Create.cshtml" />
+    <Content Include="Views\EGRESO_RENGLON\Delete.cshtml" />
+    <Content Include="Views\EGRESO_RENGLON\Details.cshtml" />
+    <Content Include="Views\EGRESO_RENGLON\Edit.cshtml" />
+    <Content Include="Views\EGRESO_RENGLON\Index.cshtml" />
+    <Content Include="Views\PAGO_TIPO\Create.cshtml" />
+    <Content Include="Views\PAGO_TIPO\Delete.cshtml" />
+    <Content Include="Views\PAGO_TIPO\Details.cshtml" />
+    <Content Include="Views\PAGO_TIPO\Edit.cshtml" />
+    <Content Include="Views\PAGO_TIPO\Index.cshtml" />
+    <Content Include="Views\EGRESOes1\Create.cshtml" />
+    <Content Include="Views\EGRESOes1\Delete.cshtml" />
+    <Content Include="Views\EGRESOes1\Details.cshtml" />
+    <Content Include="Views\EGRESOes1\Edit.cshtml" />
+    <Content Include="Views\EGRESOes1\Index.cshtml" />
+    <Content Include="Views\INGRESOes1\Create.cshtml" />
+    <Content Include="Views\INGRESOes1\Delete.cshtml" />
+    <Content Include="Views\INGRESOes1\Details.cshtml" />
+    <Content Include="Views\INGRESOes1\Edit.cshtml" />
+    <Content Include="Views\INGRESOes1\Index.cshtml" />
+    <Content Include="Views\USUARIOs1\Create.cshtml" />
+    <Content Include="Views\USUARIOs1\Delete.cshtml" />
+    <Content Include="Views\USUARIOs1\Details.cshtml" />
+    <Content Include="Views\USUARIOs1\Edit.cshtml" />
+    <Content Include="Views\USUARIOs1\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
