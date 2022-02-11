@@ -7,24 +7,29 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonales_G_.Models
+namespace FinanzasPersonales_G_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class EGRESO_RENGLON
+    public partial class PROCESO_CORTE
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EGRESO_RENGLON()
+        public PROCESO_CORTE()
         {
-            this.EGRESO = new HashSet<EGRESO>();
+            this.USUARIO = new HashSet<USUARIO>();
         }
     
         public int ID { get; set; }
-        public string Descripcion { get; set; }
-        public bool Estado { get; set; }
+        public Nullable<int> Ano { get; set; }
+        public string Mes { get; set; }
+        public System.DateTime Fecha_Corte { get; set; }
+        public decimal Balance_Inicial { get; set; }
+        public decimal Total_ingreso { get; set; }
+        public decimal Total_Egreso { get; set; }
+        public decimal Balance_corte { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EGRESO> EGRESO { get; set; }
+        public virtual ICollection<USUARIO> USUARIO { get; set; }
     }
 }

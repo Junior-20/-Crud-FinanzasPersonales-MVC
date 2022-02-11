@@ -7,19 +7,24 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonales_G_.Models
+namespace FinanzasPersonales_G_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class INGRESO
+    public partial class EGRESO_RENGLON
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public EGRESO_RENGLON()
+        {
+            this.EGRESO = new HashSet<EGRESO>();
+        }
+    
         public int ID { get; set; }
-        public int Tipo_Ingreso { get; set; }
         public string Descripcion { get; set; }
-        public string Tipo_Obtencion { get; set; }
         public bool Estado { get; set; }
     
-        public virtual INGRESO_TIPO INGRESO_TIPO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<EGRESO> EGRESO { get; set; }
     }
 }

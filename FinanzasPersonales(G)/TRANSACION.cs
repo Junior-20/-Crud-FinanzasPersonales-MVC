@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonales_G_.Models
+namespace FinanzasPersonales_G_
 {
     using System;
     using System.Collections.Generic;

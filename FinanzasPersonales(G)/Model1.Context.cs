@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonales_G_.Models
+namespace FinanzasPersonales_G_
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class FinanzasPerEntities : DbContext
+    public partial class FinanzasPerEntities1 : DbContext
     {
-        public FinanzasPerEntities()
-            : base("name=FinanzasPerEntities")
+        public FinanzasPerEntities1()
+            : base("name=FinanzasPerEntities1")
         {
         }
     

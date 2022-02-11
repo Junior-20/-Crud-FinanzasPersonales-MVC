@@ -7,17 +7,17 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonales_G_.Models
+namespace FinanzasPersonales_G_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class EGRESO_TIPO
+    public partial class INGRESO_TIPO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public EGRESO_TIPO()
+        public INGRESO_TIPO()
         {
-            this.EGRESO = new HashSet<EGRESO>();
+            this.INGRESO = new HashSet<INGRESO>();
         }
     
         public int ID { get; set; }
@@ -25,6 +25,6 @@ namespace FinanzasPersonales_G_.Models
         public bool Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<EGRESO> EGRESO { get; set; }
+        public virtual ICollection<INGRESO> INGRESO { get; set; }
     }
 }

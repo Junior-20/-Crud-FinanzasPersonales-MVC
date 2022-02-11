@@ -7,29 +7,27 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonales_G_.Models
+namespace FinanzasPersonales_G_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class PROCESO_CORTE
+    public partial class PAGO_TIPO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public PROCESO_CORTE()
+        public PAGO_TIPO()
         {
-            this.USUARIO = new HashSet<USUARIO>();
+            this.EGRESO = new HashSet<EGRESO>();
+            this.TRANSACION = new HashSet<TRANSACION>();
         }
     
         public int ID { get; set; }
-        public Nullable<int> Ano { get; set; }
-        public string Mes { get; set; }
-        public System.DateTime Fecha_Corte { get; set; }
-        public decimal Balance_Inicial { get; set; }
-        public decimal Total_ingreso { get; set; }
-        public decimal Total_Egreso { get; set; }
-        public decimal Balance_corte { get; set; }
+        public string Descripcion { get; set; }
+        public Nullable<bool> Estado { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<USUARIO> USUARIO { get; set; }
+        public virtual ICollection<EGRESO> EGRESO { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<TRANSACION> TRANSACION { get; set; }
     }
 }

@@ -145,15 +145,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_INGRESO_TIPO_INGRESO">
-          <End Role="INGRESO" Type="Self.INGRESO" Multiplicity="1" />
-          <End Role="INGRESO_TIPO" Type="Self.INGRESO_TIPO" Multiplicity="0..1" />
+        <Association Name="FK_INGRESO_INGRESO_TIPO">
+          <End Role="INGRESO_TIPO" Type="Self.INGRESO_TIPO" Multiplicity="1" />
+          <End Role="INGRESO" Type="Self.INGRESO" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="INGRESO">
+            <Principal Role="INGRESO_TIPO">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="INGRESO_TIPO">
-              <PropertyRef Name="ID" />
+            <Dependent Role="INGRESO">
+              <PropertyRef Name="Tipo_Ingreso" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -216,9 +216,9 @@
             <End Role="PAGO_TIPO" EntitySet="PAGO_TIPO" />
             <End Role="EGRESO" EntitySet="EGRESO" />
           </AssociationSet>
-          <AssociationSet Name="FK_INGRESO_TIPO_INGRESO" Association="Self.FK_INGRESO_TIPO_INGRESO">
-            <End Role="INGRESO" EntitySet="INGRESO" />
+          <AssociationSet Name="FK_INGRESO_INGRESO_TIPO" Association="Self.FK_INGRESO_INGRESO_TIPO">
             <End Role="INGRESO_TIPO" EntitySet="INGRESO_TIPO" />
+            <End Role="INGRESO" EntitySet="INGRESO" />
           </AssociationSet>
           <AssociationSet Name="FK_TRANSACION_PAGO_TIPO" Association="Self.FK_TRANSACION_PAGO_TIPO">
             <End Role="PAGO_TIPO" EntitySet="PAGO_TIPO" />
@@ -279,7 +279,7 @@
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Tipo_Obtencion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="INGRESO_TIPO" Relationship="Self.FK_INGRESO_TIPO_INGRESO" FromRole="INGRESO" ToRole="INGRESO_TIPO" />
+          <NavigationProperty Name="INGRESO_TIPO" Relationship="Self.FK_INGRESO_INGRESO_TIPO" FromRole="INGRESO" ToRole="INGRESO_TIPO" />
         </EntityType>
         <EntityType Name="INGRESO_TIPO">
           <Key>
@@ -288,7 +288,7 @@
           <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Estado" Type="Boolean" Nullable="false" />
-          <NavigationProperty Name="INGRESO" Relationship="Self.FK_INGRESO_TIPO_INGRESO" FromRole="INGRESO_TIPO" ToRole="INGRESO" />
+          <NavigationProperty Name="INGRESO" Relationship="Self.FK_INGRESO_INGRESO_TIPO" FromRole="INGRESO_TIPO" ToRole="INGRESO" />
         </EntityType>
         <EntityType Name="PAGO_TIPO">
           <Key>
@@ -392,15 +392,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_INGRESO_TIPO_INGRESO">
-          <End Role="INGRESO" Type="Self.INGRESO" Multiplicity="1" />
-          <End Role="INGRESO_TIPO" Type="Self.INGRESO_TIPO" Multiplicity="0..1" />
+        <Association Name="FK_INGRESO_INGRESO_TIPO">
+          <End Role="INGRESO_TIPO" Type="Self.INGRESO_TIPO" Multiplicity="1" />
+          <End Role="INGRESO" Type="Self.INGRESO" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="INGRESO">
+            <Principal Role="INGRESO_TIPO">
               <PropertyRef Name="ID" />
             </Principal>
-            <Dependent Role="INGRESO_TIPO">
-              <PropertyRef Name="ID" />
+            <Dependent Role="INGRESO">
+              <PropertyRef Name="Tipo_Ingreso" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -440,7 +440,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="FinanzasPerEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="FinanzasPerEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="EGRESO" EntityType="Self.EGRESO" />
           <EntitySet Name="EGRESO_RENGLON" EntityType="Self.EGRESO_RENGLON" />
           <EntitySet Name="EGRESO_TIPO" EntityType="Self.EGRESO_TIPO" />
@@ -463,9 +463,9 @@
             <End Role="PAGO_TIPO" EntitySet="PAGO_TIPO" />
             <End Role="EGRESO" EntitySet="EGRESO" />
           </AssociationSet>
-          <AssociationSet Name="FK_INGRESO_TIPO_INGRESO" Association="Self.FK_INGRESO_TIPO_INGRESO">
-            <End Role="INGRESO" EntitySet="INGRESO" />
+          <AssociationSet Name="FK_INGRESO_INGRESO_TIPO" Association="Self.FK_INGRESO_INGRESO_TIPO">
             <End Role="INGRESO_TIPO" EntitySet="INGRESO_TIPO" />
+            <End Role="INGRESO" EntitySet="INGRESO" />
           </AssociationSet>
           <AssociationSet Name="FK_TRANSACION_PAGO_TIPO" Association="Self.FK_TRANSACION_PAGO_TIPO">
             <End Role="PAGO_TIPO" EntitySet="PAGO_TIPO" />
@@ -485,7 +485,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="FinanzasPerModelStoreContainer" CdmEntityContainer="FinanzasPerEntities">
+        <EntityContainerMapping StorageEntityContainer="FinanzasPerModelStoreContainer" CdmEntityContainer="FinanzasPerEntities1">
           <EntitySetMapping Name="EGRESO">
             <EntityTypeMapping TypeName="FinanzasPerModel.EGRESO">
               <MappingFragment StoreEntitySet="EGRESO">

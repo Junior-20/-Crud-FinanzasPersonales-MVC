@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using FinanzasPersonales_G_.Models;
+using FinanzasPersonales_G_;
 
 namespace FinanzasPersonales_G_.Controllers
 {
     public class PROCESO_CORTEController : Controller
     {
-        private FinanzasPerEntities db = new FinanzasPerEntities();
+        private FinanzasPerEntities1 db = new FinanzasPerEntities1();
 
         // GET: PROCESO_CORTE
         public ActionResult Index()

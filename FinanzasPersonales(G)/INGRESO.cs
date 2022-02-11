@@ -7,17 +7,19 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FinanzasPersonales_G_.Models
+namespace FinanzasPersonales_G_
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class sysdiagrams
+    public partial class INGRESO
     {
-        public string name { get; set; }
-        public int principal_id { get; set; }
-        public int diagram_id { get; set; }
-        public Nullable<int> version { get; set; }
-        public byte[] definition { get; set; }
+        public int ID { get; set; }
+        public int Tipo_Ingreso { get; set; }
+        public string Descripcion { get; set; }
+        public string Tipo_Obtencion { get; set; }
+        public bool Estado { get; set; }
+    
+        public virtual INGRESO_TIPO INGRESO_TIPO { get; set; }
     }
 }
