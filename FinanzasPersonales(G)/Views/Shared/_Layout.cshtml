@@ -11,13 +11,14 @@
 <body>
     <div class="navbar  navbar-inverse navbar-fixed-top">
         <div class="container">
-            <div class="navbar-header">
+            <div class="
+                 -header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="glyphicon glyphicon-usd"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Finanzas", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                @Html.ActionLink("Finanzas Para Todos", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
@@ -58,9 +59,89 @@
     <div class="container body-content">
         @RenderBody()
         <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+            <div class="wrapper">
+                <div class="wrap">
+                    <header>
+                        <div class="logo"></div>
+                        <nav>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                        </nav>
+                    </header>
+
+                    <div class="arrow animated bounce"></div>
+
+                    <section class="transparent">
+                        <div class="headline"></div>
+                        <div class="text"></div>
+                        <div class="text"></div>
+                        <div class="button"></div>
+                    </section>
+
+                    <section class="cards">
+                        <div class="card">
+                            <img src="https://imgplaceholder.com/500x300/transparent/ddd/ion-image" alt="">
+                            <div class="content">
+                                <div class="headline"></div>
+                                <div class="text"></div>
+                                <div class="text"></div>
+                                <div class="button"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://imgplaceholder.com/500x300/transparent/ddd/ion-image" alt="">
+                            <div class="content">
+                                <div class="headline"></div>
+                                <div class="text"></div>
+                                <div class="text"></div>
+                                <div class="button"></div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img src="https://imgplaceholder.com/500x300/transparent/ddd/ion-image" alt="">
+                            <div class="content">
+                                <div class="headline"></div>
+                                <div class="text"></div>
+                                <div class="text"></div>
+                                <div class="button"></div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="Registro profesores">
+                        <div class="Actualidad"></div>
+                        <div class="Registro"></div>
+                        <div class="Legal"></div>
+                        <div class="Contacto"></div>
+                        <div class="Red de  Colaboradores"></div>
+                        <div class="Profesores"></div>
+                        <div class="Día de la Educación"></div>
+                        <div class="Financiera"></div>
+                        <div class="Premios de la Educación"></div>
+                        <div class="Financiera"></div>
+                        <div class="button"></div>
+                    </section>
+
+                </div>
+            </div>
+
+            <footer>
+                <div class="content">
+                    <div class="logo"></div>
+                    <nav>
+                        <ul>
+                            <li></li>
+                            <li></li>
+                            <li></li>
+                        </ul>
+                    </nav>
+                </div>
+            </footer>
+            <p>&copy; @DateTime.Now.Year - Finanzas Personales. Desarrollado por Finanzas UNAPEC. Todos los derechos reservados.</p>
+ 
     </div>
 
     @Scripts.Render("~/bundles/jquery")
