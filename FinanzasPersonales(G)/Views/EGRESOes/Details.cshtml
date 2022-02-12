@@ -1,0 +1,58 @@
+﻿@model FinanzasPersonales_G_.Models.EGRESO
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>EGRESO</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Decripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Decripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EGRESO_RENGLON.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EGRESO_RENGLON.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EGRESO_TIPO.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EGRESO_TIPO.Descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.PAGO_TIPO.Descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.PAGO_TIPO.Descripcion)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-info" }) |
+    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-primary" })
+</p>

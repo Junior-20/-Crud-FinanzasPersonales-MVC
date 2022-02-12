@@ -6,19 +6,18 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using FinanzasPersonales_G_;
+using FinanzasPersonales_G_.Models;
 
 namespace FinanzasPersonales_G_.Controllers
 {
     public class USUARIOsController : Controller
     {
-        private FinanzasPerEntities1 db = new FinanzasPerEntities1();
+        private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: USUARIOs
         public ActionResult Index()
         {
-            var uSUARIO = db.USUARIO.Include(u => u.PROCESO_CORTE);
-            return View(uSUARIO.ToList());
+            return View(db.USUARIOs.ToList());
         }
 
         // GET: USUARIOs/Details/5
@@ -28,7 +27,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            USUARIO uSUARIO = db.USUARIO.Find(id);
+            USUARIO uSUARIO = db.USUARIOs.Find(id);
             if (uSUARIO == null)
             {
                 return HttpNotFound();
@@ -39,7 +38,6 @@ namespace FinanzasPersonales_G_.Controllers
         // GET: USUARIOs/Create
         public ActionResult Create()
         {
-            ViewBag.Fecha_Corte = new SelectList(db.PROCESO_CORTE, "ID", "Mes");
             return View();
         }
 
@@ -52,12 +50,11 @@ namespace FinanzasPersonales_G_.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.USUARIO.Add(uSUARIO);
+                db.USUARIOs.Add(uSUARIO);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Fecha_Corte = new SelectList(db.PROCESO_CORTE, "ID", "Mes", uSUARIO.Fecha_Corte);
             return View(uSUARIO);
         }
 
@@ -68,12 +65,11 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            USUARIO uSUARIO = db.USUARIO.Find(id);
+            USUARIO uSUARIO = db.USUARIOs.Find(id);
             if (uSUARIO == null)
             {
                 return HttpNotFound();
             }
-            ViewBag.Fecha_Corte = new SelectList(db.PROCESO_CORTE, "ID", "Mes", uSUARIO.Fecha_Corte);
             return View(uSUARIO);
         }
 
@@ -90,7 +86,6 @@ namespace FinanzasPersonales_G_.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Fecha_Corte = new SelectList(db.PROCESO_CORTE, "ID", "Mes", uSUARIO.Fecha_Corte);
             return View(uSUARIO);
         }
 
@@ -101,7 +96,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            USUARIO uSUARIO = db.USUARIO.Find(id);
+            USUARIO uSUARIO = db.USUARIOs.Find(id);
             if (uSUARIO == null)
             {
                 return HttpNotFound();
@@ -114,8 +109,8 @@ namespace FinanzasPersonales_G_.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            USUARIO uSUARIO = db.USUARIO.Find(id);
-            db.USUARIO.Remove(uSUARIO);
+            USUARIO uSUARIO = db.USUARIOs.Find(id);
+            db.USUARIOs.Remove(uSUARIO);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

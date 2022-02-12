@@ -1,4 +1,4 @@
-﻿@model FinanzasPersonales_G_.EGRESO_RENGLON
+﻿@model FinanzasPersonales_G_.Models.EGRESO_RENGLON
 
 @{
     ViewBag.Title = "Details";
@@ -29,6 +29,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }, new { @class = "btn btn-info"}) |
+    @Html.ActionLink("Back to List", "Index",null, new { @class = "btn btn-primary" })
 </p>

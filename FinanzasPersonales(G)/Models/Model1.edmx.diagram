@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="22784babe439490b9ee2b5e9ddf3b0c8" Name="Diagram1">
+        <EntityTypeShape EntityType="FinanzasPerModel.EGRESO" Width="1.5" PointX="3" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.EGRESO_RENGLON" Width="1.5" PointX="0.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.EGRESO_TIPO" Width="1.5" PointX="0.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.INGRESO" Width="1.5" PointX="11" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.INGRESO_TIPO" Width="1.5" PointX="8.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.PAGO_TIPO" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.PROCESO_CORTE" Width="1.5" PointX="6" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.sysdiagram" Width="1.5" PointX="2.75" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.TRANSACION" Width="1.5" PointX="6" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="FinanzasPerModel.USUARIO" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="FinanzasPerModel.FK_EGRESO_EGRESO_RENGLON" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPerModel.FK_EGRESO_EGRESO_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPerModel.FK_EGRESO_PAGO_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPerModel.FK_INGRESO_INGRESO_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPerModel.FK_TRANSACION_PAGO_TIPO" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPerModel.FK_PROCESO_CORTE_USUARIO" ManuallyRouted="false" />
+        <AssociationConnector Association="FinanzasPerModel.FK_TRANSACION_USUARIO" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

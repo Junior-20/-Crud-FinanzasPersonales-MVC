@@ -6,19 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using FinanzasPersonales_G_;
+using FinanzasPersonales_G_.Models;
 
 namespace FinanzasPersonales_G_.Controllers
 {
     public class EGRESOesController : Controller
     {
-        private FinanzasPerEntities1 db = new FinanzasPerEntities1();
+        private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: EGRESOes
         public ActionResult Index()
         {
-            var eGRESO = db.EGRESO.Include(e => e.EGRESO_RENGLON).Include(e => e.EGRESO_TIPO).Include(e => e.PAGO_TIPO);
-            return View(eGRESO.ToList());
+            var eGRESOes = db.EGRESOes.Include(e => e.EGRESO_RENGLON).Include(e => e.EGRESO_TIPO).Include(e => e.PAGO_TIPO);
+            return View(eGRESOes.ToList());
         }
 
         // GET: EGRESOes/Details/5
@@ -28,7 +28,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EGRESO eGRESO = db.EGRESO.Find(id);
+            EGRESO eGRESO = db.EGRESOes.Find(id);
             if (eGRESO == null)
             {
                 return HttpNotFound();
@@ -54,7 +54,7 @@ namespace FinanzasPersonales_G_.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.EGRESO.Add(eGRESO);
+                db.EGRESOes.Add(eGRESO);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -72,7 +72,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EGRESO eGRESO = db.EGRESO.Find(id);
+            EGRESO eGRESO = db.EGRESOes.Find(id);
             if (eGRESO == null)
             {
                 return HttpNotFound();
@@ -109,7 +109,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            EGRESO eGRESO = db.EGRESO.Find(id);
+            EGRESO eGRESO = db.EGRESOes.Find(id);
             if (eGRESO == null)
             {
                 return HttpNotFound();
@@ -122,8 +122,8 @@ namespace FinanzasPersonales_G_.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            EGRESO eGRESO = db.EGRESO.Find(id);
-            db.EGRESO.Remove(eGRESO);
+            EGRESO eGRESO = db.EGRESOes.Find(id);
+            db.EGRESOes.Remove(eGRESO);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

@@ -6,19 +6,19 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using FinanzasPersonales_G_;
+using FinanzasPersonales_G_.Models;
 
 namespace FinanzasPersonales_G_.Controllers
 {
     public class INGRESOesController : Controller
     {
-        private FinanzasPerEntities1 db = new FinanzasPerEntities1();
+        private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: INGRESOes
         public ActionResult Index()
         {
-            var iNGRESO = db.INGRESO.Include(i => i.INGRESO_TIPO);
-            return View(iNGRESO.ToList());
+            var iNGRESOes = db.INGRESOes.Include(i => i.INGRESO_TIPO);
+            return View(iNGRESOes.ToList());
         }
 
         // GET: INGRESOes/Details/5
@@ -28,7 +28,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            INGRESO iNGRESO = db.INGRESO.Find(id);
+            INGRESO iNGRESO = db.INGRESOes.Find(id);
             if (iNGRESO == null)
             {
                 return HttpNotFound();
@@ -52,7 +52,7 @@ namespace FinanzasPersonales_G_.Controllers
         {
             if (ModelState.IsValid)
             {
-                db.INGRESO.Add(iNGRESO);
+                db.INGRESOes.Add(iNGRESO);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -68,7 +68,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            INGRESO iNGRESO = db.INGRESO.Find(id);
+            INGRESO iNGRESO = db.INGRESOes.Find(id);
             if (iNGRESO == null)
             {
                 return HttpNotFound();
@@ -101,7 +101,7 @@ namespace FinanzasPersonales_G_.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            INGRESO iNGRESO = db.INGRESO.Find(id);
+            INGRESO iNGRESO = db.INGRESOes.Find(id);
             if (iNGRESO == null)
             {
                 return HttpNotFound();
@@ -114,8 +114,8 @@ namespace FinanzasPersonales_G_.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            INGRESO iNGRESO = db.INGRESO.Find(id);
-            db.INGRESO.Remove(iNGRESO);
+            INGRESO iNGRESO = db.INGRESOes.Find(id);
+            db.INGRESOes.Remove(iNGRESO);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

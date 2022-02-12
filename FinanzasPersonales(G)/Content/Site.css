@@ -4,10 +4,19 @@
     padding-bottom: 20px;
 }
 
+h2{
+    font-weight:700;
+}
 /* Set padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    margin: 0 auto;
+    padding: 0;
+    box-sizing: border-box;
+    max-width:1230px;
+
+}
+.carousel, .carousel-inner > .item > img {
+    height:500px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 

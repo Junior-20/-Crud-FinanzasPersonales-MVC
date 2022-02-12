@@ -6,13 +6,13 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using FinanzasPersonales_G_;
+using FinanzasPersonales_G_.Models;
 
 namespace FinanzasPersonales_G_.Controllers
 {
     public class EGRESO_TIPOController : Controller
     {
-        private FinanzasPerEntities1 db = new FinanzasPerEntities1();
+        private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: EGRESO_TIPO
         public ActionResult Index()
