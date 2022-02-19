@@ -13,8 +13,6 @@ h2{
     padding: 0;
     box-sizing: border-box;
     max-width:1230px;
-    background-color:white;
-
 }
 .carousel, .carousel-inner > .item > img {
     height:500px;
