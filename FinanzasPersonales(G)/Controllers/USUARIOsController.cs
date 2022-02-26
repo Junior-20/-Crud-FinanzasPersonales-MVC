@@ -15,6 +15,7 @@ namespace FinanzasPersonales_G_.Controllers
         private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: USUARIOs
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.USUARIOs.ToList());

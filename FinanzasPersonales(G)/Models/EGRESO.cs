@@ -11,7 +11,7 @@ namespace FinanzasPersonales_G_.Models
 {
     using System;
     using System.Collections.Generic;
-    
+
     public partial class EGRESO
     {
         public int ID { get; set; }

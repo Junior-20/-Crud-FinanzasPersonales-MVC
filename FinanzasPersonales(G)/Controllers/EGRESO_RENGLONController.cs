@@ -10,11 +10,13 @@ using FinanzasPersonales_G_.Models;
 
 namespace FinanzasPersonales_G_.Controllers
 {
+ 
     public class EGRESO_RENGLONController : Controller
     {
         private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: EGRESO_RENGLON
+        [Authorize]
         public ActionResult Index()
         {
             return View(db.EGRESO_RENGLON.ToList());
