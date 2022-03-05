@@ -11,7 +11,8 @@ namespace FinanzasPersonales_G_.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PAGO_TIPO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,6 +23,8 @@ namespace FinanzasPersonales_G_.Models
         }
     
         public int ID { get; set; }
+        [Required]
+        [StringLength(60, MinimumLength = 5)]
         public string Descripcion { get; set; }
         public Nullable<bool> Estado { get; set; }
     

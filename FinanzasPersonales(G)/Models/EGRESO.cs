@@ -11,13 +11,23 @@ namespace FinanzasPersonales_G_.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
 
     public partial class EGRESO
     {
         public int ID { get; set; }
+        [Display( Name ="Tipo_Egreso")]
+        [Required]
         public int Tipo_Egreso { get; set; }
+        [Display( Name ="Renglon_Egreso")]
+        [Required]
         public int Renglon_Egreso { get; set; }
+        [Display( Name ="Tipo_Pago")]
+        [Required]
         public int Tipo_Pago { get; set; }
+        [Required]
+        [StringLength(60, MinimumLength = 5)]
         public string Decripcion { get; set; }
         public bool Estado { get; set; }
     

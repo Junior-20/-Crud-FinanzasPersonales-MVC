@@ -4,7 +4,7 @@
     ViewBag.Title = "Index";
 }
 
-<h2 class="text-center">Gestion de Egresos</h2>
+<h2>Index</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
@@ -47,9 +47,10 @@
             @Html.DisplayFor(modelItem => item.PAGO_TIPO.Descripcion)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }, new { @class = "btn btn-info" }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }, new { @class = "btn btn-warning" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID }, new { @class = "btn btn-danger" })
+            @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-warning" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+
         </td>
     </tr>
 }

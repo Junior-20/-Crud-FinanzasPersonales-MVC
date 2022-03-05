@@ -11,7 +11,8 @@ namespace FinanzasPersonales_G_.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class USUARIO
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -22,10 +23,17 @@ namespace FinanzasPersonales_G_.Models
         }
     
         public int ID { get; set; }
+        [Required]
         public string Nombre { get; set; }
+        [Required]
         public string Cedula { get; set; }
+        [Required]
         public int Limite_Egreso { get; set; }
+        [Required]
         public string Tipo_Persona { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime Fecha_Corte { get; set; }
         public bool Estado { get; set; }
     

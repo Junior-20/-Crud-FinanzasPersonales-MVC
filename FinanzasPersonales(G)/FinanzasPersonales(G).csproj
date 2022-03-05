@@ -320,11 +320,6 @@
     <Content Include="Views\INGRESOes\Details.cshtml" />
     <Content Include="Views\INGRESOes\Edit.cshtml" />
     <Content Include="Views\INGRESOes\Index.cshtml" />
-    <Content Include="Views\EGRESOes\Create.cshtml" />
-    <Content Include="Views\EGRESOes\Delete.cshtml" />
-    <Content Include="Views\EGRESOes\Details.cshtml" />
-    <Content Include="Views\EGRESOes\Edit.cshtml" />
-    <Content Include="Views\EGRESOes\Index.cshtml" />
     <Content Include="Views\USUARIOs\Create.cshtml" />
     <Content Include="Views\USUARIOs\Delete.cshtml" />
     <Content Include="Views\USUARIOs\Details.cshtml" />
@@ -340,6 +335,11 @@
     <Content Include="Views\EGRESO_RENGLON\Details.cshtml" />
     <Content Include="Views\EGRESO_RENGLON\Edit.cshtml" />
     <Content Include="Views\EGRESO_RENGLON\Index.cshtml" />
+    <Content Include="Views\EGRESOes\Create.cshtml" />
+    <Content Include="Views\EGRESOes\Delete.cshtml" />
+    <Content Include="Views\EGRESOes\Details.cshtml" />
+    <Content Include="Views\EGRESOes\Edit.cshtml" />
+    <Content Include="Views\EGRESOes\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
