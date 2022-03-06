@@ -15,10 +15,13 @@ namespace FinanzasPersonales_G_.Controllers
         private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: USUARIOs
-        [Authorize]
-        public ActionResult Index()
+     // [Authorize]
+        public ActionResult Index(string Criterio = null)
         {
-            return View(db.USUARIOs.ToList());
+            return View(db.USUARIOs.Where(p => Criterio == null || p.Nombre.Contains(Criterio)
+                                                                || p.Limite_Egreso.ToString().StartsWith(Criterio)
+                                                                || p.Tipo_Persona.StartsWith(Criterio)
+                                                                || p.Cedula.StartsWith(Criterio)).ToList());
         }
 
         // GET: USUARIOs/Details/5
