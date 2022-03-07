@@ -16,10 +16,12 @@ namespace FinanzasPersonales_G_.Controllers
 
         // GET: INGRESOes
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string Criterio = null)
         {
             var iNGRESOes = db.INGRESOes.Include(i => i.INGRESO_TIPO);
-            return View(iNGRESOes.ToList());
+            return View(db.INGRESOes.Where(p => Criterio == null  || p.Tipo_Ingreso.ToString().StartsWith(Criterio)
+                                                                || p.Descripcion.Contains(Criterio)
+                                                                || p.Tipo_Obtencion.Contains(Criterio)).ToList());
         }
 
         // GET: INGRESOes/Details/5

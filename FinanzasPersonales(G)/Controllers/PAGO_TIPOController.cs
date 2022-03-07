@@ -16,9 +16,9 @@ namespace FinanzasPersonales_G_.Controllers
 
         // GET: PAGO_TIPO
         [Authorize]
-        public ActionResult Index()
+        public ActionResult Index(string Criterio = null)
         {
-            return View(db.PAGO_TIPO.ToList());
+            return View(db.PAGO_TIPO.Where(p => Criterio == null || p.Descripcion.Contains(Criterio)).ToList());
         }
 
         // GET: PAGO_TIPO/Details/5

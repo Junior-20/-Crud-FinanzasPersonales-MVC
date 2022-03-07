@@ -19,7 +19,7 @@ namespace FinanzasPersonales_G_.Controllers
         [Authorize]
         public ActionResult Index(string Criterio = null)
         {
-            return View(db.USUARIOs.Where(p => Criterio == null || p.Descripcion.Contains(Criterio).ToList());
+            return View(db.EGRESO_RENGLON.Where(p => Criterio == null || p.Descripcion.Contains(Criterio)).ToList()); ;
         }
 
         // GET: EGRESO_RENGLON/Details/5

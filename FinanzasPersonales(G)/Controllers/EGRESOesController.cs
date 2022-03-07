@@ -15,10 +15,13 @@ namespace FinanzasPersonales_G_.Controllers
         private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: EGRESOes
-        public ActionResult Index()
+        public ActionResult Index(string Criterio = null)
         {
             var eGRESOes = db.EGRESOes.Include(e => e.EGRESO_RENGLON).Include(e => e.EGRESO_TIPO).Include(e => e.PAGO_TIPO);
-            return View(eGRESOes.ToList());
+            return View(db.EGRESOes.Where(p => Criterio == null || p.Decripcion.Contains(Criterio)
+                                                                            || p.Tipo_Egreso.ToString().StartsWith(Criterio)
+                                                                            || p.Tipo_Pago.ToString().StartsWith(Criterio)
+                                                                            || p.Renglon_Egreso.ToString().StartsWith(Criterio)).ToList());
         }
 
         // GET: EGRESOes/Details/5
