@@ -9,6 +9,10 @@
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
 </p>
+<form method="get">
+    <input type="text" id="Criterio" name="Criterio" />
+    <input class="btn btn-info" type="submit" id="cmdBuscar" value="Buscar" />
+</form>
 <table class="table table-striped">
     <tr>
         <th>
@@ -20,7 +24,7 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
+    @foreach (var item in Model) {
     <tr>
         <td>
             @Html.DisplayFor(modelItem => item.Descripcion)
