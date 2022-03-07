@@ -11,18 +11,33 @@ namespace FinanzasPersonales_G_.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class TRANSACION
     {
         public int ID { get; set; }
+        [Required]
+        [StringLength(60, MinimumLength = 5)]
         public string Tipo_Transacion { get; set; }
         public int Usuario { get; set; }
+        [Required]
+        [StringLength(60, MinimumLength = 5)]
         public string Evento { get; set; }
         public int Tipo_Pago { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime Fecha_Transacion { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime Fecha_Registro { get; set; }
+        [Required]
         public decimal Monto_Transacion { get; set; }
+        [Required]
         public int NO_Tarjeta_CR { get; set; }
+        [Required]
+        [StringLength(60, MinimumLength = 5)]
         public string Comentario { get; set; }
         public bool Estado { get; set; }
     

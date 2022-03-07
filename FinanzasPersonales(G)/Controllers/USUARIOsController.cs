@@ -15,7 +15,7 @@ namespace FinanzasPersonales_G_.Controllers
         private FinanzasPerEntities2 db = new FinanzasPerEntities2();
 
         // GET: USUARIOs
-     // [Authorize]
+      [Authorize(Users = "Admin3030@gmail.com")]
         public ActionResult Index(string Criterio = null)
         {
             return View(db.USUARIOs.Where(p => Criterio == null || p.Nombre.Contains(Criterio)

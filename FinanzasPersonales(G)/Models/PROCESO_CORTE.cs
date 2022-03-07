@@ -11,16 +11,26 @@ namespace FinanzasPersonales_G_.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class PROCESO_CORTE
     {
         public int ID { get; set; }
+        [Required]
         public Nullable<int> Ano { get; set; }
+        [Required]
         public string Mes { get; set; }
+        [Required]
+        [DataType(DataType.Date)]
+        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime Fecha_Corte { get; set; }
+        [Required]
         public decimal Balance_Inicial { get; set; }
+        [Required]
         public decimal Total_ingreso { get; set; }
+        [Required]
         public decimal Total_Egreso { get; set; }
+        [Required]
         public decimal Balance_corte { get; set; }
         public Nullable<int> Usuario { get; set; }
     
