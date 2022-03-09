@@ -243,6 +243,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Fotos\BK22GQ32HVBHTE4H3BXHZILSOE.jpg" />
+    <Content Include="Fotos\pexels-karolina-grabowska-6328938.jpg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Models\Model1.Context.tt">

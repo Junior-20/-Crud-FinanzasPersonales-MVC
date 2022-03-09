@@ -42,7 +42,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tipo_Persona, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tipo_Persona, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Tipo_Persona, new List<SelectListItem>
+                {
+                   new SelectListItem{ Text="Tipo de Persona", Value = "" },
+                   new SelectListItem{ Text="Fisica", Value = "Fisica" },
+                   new SelectListItem{ Text="Juridica", Value = "Juridica" }
+                }, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Tipo_Persona, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -59,7 +64,12 @@
             @Html.LabelFor(model => model.Estado, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
                 <div class="checkbox">
-                    @Html.EditorFor(model => model.Estado)
+                    @Html.DropDownListFor(model => model.Estado, new List<SelectListItem>
+        {
+           new SelectListItem{ Text="Seleccione el Estado", Value = "" },
+           new SelectListItem{ Text="Activo", Value = "True" },
+           new SelectListItem{ Text="Inactivo", Value = "False" }
+        }, htmlAttributes: new { @class = "form-control" })
                     @Html.ValidationMessageFor(model => model.Estado, "", new { @class = "text-danger" })
                 </div>
             </div>
