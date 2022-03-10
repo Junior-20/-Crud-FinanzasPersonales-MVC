@@ -54,9 +54,9 @@ namespace FinanzasPersonales_G_
             //   consumerKey: "",
             //   consumerSecret: "");
 
-            //app.UseFacebookAuthentication(
-            //   appId: "",
-            //   appSecret: "");
+            app.UseFacebookAuthentication(
+               appId: "641695066893113",
+              appSecret: "8093a74143772e766d933006c75be859");
 
             //app.UseGoogleAuthentication(new GoogleOAuth2AuthenticationOptions()
             //{
