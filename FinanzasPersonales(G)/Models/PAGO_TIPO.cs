@@ -25,6 +25,7 @@ namespace FinanzasPersonales_G_.Models
         public int ID { get; set; }
         [Required]
         [StringLength(60, MinimumLength = 5)]
+        [Display(Name = "Tipo_Pago")]
         public string Descripcion { get; set; }
         public Nullable<bool> Estado { get; set; }
     

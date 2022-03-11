@@ -28,12 +28,13 @@ namespace FinanzasPersonales_G_.Models
         [Required]
         public string Cedula { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "0:C2", ApplyFormatInEditMode = true)]
         public int Limite_Egreso { get; set; }
         [Required]
         public string Tipo_Persona { get; set; }
         [Required]
         [DataType(DataType.Date)]
-        [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
+        [DisplayFormat(DataFormatString = "{0:yyyy - MM - dd}", ApplyFormatInEditMode = false)]
         public System.DateTime Fecha_Corte { get; set; }
         public bool Estado { get; set; }
     

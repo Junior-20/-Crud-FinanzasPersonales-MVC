@@ -16,10 +16,12 @@ namespace FinanzasPersonales_G_.Controllers
 
         // GET: PROCESO_CORTE
         [Authorize(Users = "Admin3030@gmail.com")]
-        public ActionResult Index()
+        public ActionResult Index(string Criterio = null)
         {
-            var pROCESO_CORTE = db.PROCESO_CORTE.Include(p => p.USUARIO1);
-            return View(pROCESO_CORTE.ToList());
+            return View(db.PROCESO_CORTE.Where(p => Criterio == null || p.ID.ToString().Contains(Criterio)
+                                                                || p.Usuario.ToString().StartsWith(Criterio)
+                                                                || p.Fecha_Corte.ToString().StartsWith(Criterio)
+                                                                 ).ToList());
         }
 
         // GET: PROCESO_CORTE/Details/5

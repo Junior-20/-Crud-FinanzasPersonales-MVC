@@ -16,10 +16,12 @@ namespace FinanzasPersonales_G_.Controllers
 
         // GET: TRANSACION
         [Authorize(Users = "Admin3030@gmail.com")]
-        public ActionResult Index()
+        public ActionResult Index(string Criterio = null)
         {
-            var tRANSACIONs = db.TRANSACIONs.Include(t => t.PAGO_TIPO).Include(t => t.USUARIO1);
-            return View(tRANSACIONs.ToList());
+            return View(db.TRANSACIONs.Where(p => Criterio == null || p.ID.ToString().Contains(Criterio)
+                                                                || p.Usuario.ToString().StartsWith(Criterio)
+                                                                || p.NO_Tarjeta_CR.ToString().StartsWith(Criterio)
+                                                                 ).ToList());
         }
 
         // GET: TRANSACION/Details/5

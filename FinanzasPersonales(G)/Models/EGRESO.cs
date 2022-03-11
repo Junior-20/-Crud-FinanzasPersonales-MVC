@@ -17,10 +17,8 @@ namespace FinanzasPersonales_G_.Models
     public partial class EGRESO
     {
         public int ID { get; set; }
-        [Display( Name ="Tipo_Egreso")]
         [Required]
         public int Tipo_Egreso { get; set; }
-        [Display( Name ="Renglon_Egreso")]
         [Required]
         public int Renglon_Egreso { get; set; }
         [Display( Name ="Tipo_Pago")]

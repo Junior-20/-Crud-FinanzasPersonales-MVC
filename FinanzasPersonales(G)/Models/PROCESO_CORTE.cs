@@ -25,11 +25,15 @@ namespace FinanzasPersonales_G_.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime Fecha_Corte { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public decimal Balance_Inicial { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public decimal Total_ingreso { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         [Required]
         public decimal Total_Egreso { get; set; }
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         [Required]
         public decimal Balance_corte { get; set; }
         public Nullable<int> Usuario { get; set; }

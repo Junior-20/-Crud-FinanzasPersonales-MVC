@@ -33,11 +33,13 @@ namespace FinanzasPersonales_G_.Models
         [DisplayFormat(DataFormatString = "{0:yyyy-MM-dd}", ApplyFormatInEditMode = true)]
         public System.DateTime Fecha_Registro { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public decimal Monto_Transacion { get; set; }
         [Required]
         public int NO_Tarjeta_CR { get; set; }
         [Required]
         [StringLength(60, MinimumLength = 5)]
+        [DataType(DataType.MultilineText)]
         public string Comentario { get; set; }
         public bool Estado { get; set; }
     
