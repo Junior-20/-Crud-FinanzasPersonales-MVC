@@ -17,11 +17,11 @@ namespace FinanzasPersonales_G_.Models
     {
         public int ID { get; set; }
         [Required]
-        [StringLength(60, MinimumLength = 5)]
+        [StringLength(60)]
         public string Tipo_Transacion { get; set; }
         public int Usuario { get; set; }
         [Required]
-        [StringLength(60, MinimumLength = 5)]
+        [StringLength(60)]
         public string Evento { get; set; }
         public int Tipo_Pago { get; set; }
         [Required]
