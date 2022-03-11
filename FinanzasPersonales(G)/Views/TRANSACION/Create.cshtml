@@ -18,7 +18,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Tipo_Transacion, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Tipo_Transacion, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Tipo_Transacion, new List<SelectListItem>
+              {
+                 new SelectListItem{ Text="Seleccione Tipo", Value = "" },
+                 new SelectListItem{ Text="Comercial", Value = "Comercial" },
+                 new SelectListItem{ Text="Economica", Value = "Economica" }
+              }, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Tipo_Transacion, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -34,7 +39,12 @@
         <div class="form-group">
             @Html.LabelFor(model => model.Evento, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Evento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownListFor(model => model.Evento, new List<SelectListItem>
+             {
+                new SelectListItem{ Text="Seleccione el Evento", Value = "" },
+                new SelectListItem{ Text="Ingreso", Value = "Ingreso" },
+                new SelectListItem{ Text="Egreso", Value = "Egreso" }
+             }, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Evento, "", new { @class = "text-danger" })
             </div>
         </div>

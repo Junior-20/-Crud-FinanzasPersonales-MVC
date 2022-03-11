@@ -28,7 +28,8 @@ namespace FinanzasPersonales_G_.Models
         [Required]
         public string Cedula { get; set; }
         [Required]
-        [DisplayFormat(DataFormatString = "0:C2", ApplyFormatInEditMode = true)]
+        [DataType(DataType.Currency)]
+        [DisplayFormat(DataFormatString = "{0:C2}", ApplyFormatInEditMode = false)]
         public int Limite_Egreso { get; set; }
         [Required]
         public string Tipo_Persona { get; set; }
