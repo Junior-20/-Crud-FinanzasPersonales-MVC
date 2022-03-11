@@ -18,8 +18,6 @@ namespace FinanzasPersonales_G_.Controllers
       [Authorize(Users = "Admin3030@gmail.com")]
         public ActionResult Index(string Criterio = null)
         {
-           
-
             return View(db.USUARIOs.Where(p => Criterio == null || p.Nombre.Contains(Criterio)
                                                                 || p.Limite_Egreso.ToString().StartsWith(Criterio)
                                                                 || p.Tipo_Persona.StartsWith(Criterio)
@@ -118,18 +116,10 @@ namespace FinanzasPersonales_G_.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            try
-            {
-                USUARIO uSUARIO = db.USUARIOs.Find(id);
-                db.USUARIOs.Remove(uSUARIO);
-                db.SaveChanges();
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-               return RedirectToAction("Index");
-            }
-           
+            USUARIO uSUARIO = db.USUARIOs.Find(id);
+            db.USUARIOs.Remove(uSUARIO);
+            db.SaveChanges();
+            return RedirectToAction("Index");
         }
 
         protected override void Dispose(bool disposing)
