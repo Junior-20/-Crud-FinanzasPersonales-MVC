@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -115,25 +116,16 @@ namespace FinanzasPersonales_G_.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing)
-            {
-                db.Dispose();
-            }
-            base.Dispose(disposing);
-        }
         public ActionResult ExportaExcel()
         {
             string filename = "Egresos_Tipo.csv";
             string filepath = @"C:\Users\Alex Junior Valera\Desktop\reportestra" + filename;
             StreamWriter sw = new StreamWriter(filepath);
-            sw.Writeline("sep=,");
+            sw.WriteLine("sep=,");
             sw.WriteLine("ID,Descripcion,Estado"); //Encabezado 
             foreach (var i in db.EGRESO_TIPO.ToList())
             {
-                sw.WriteLine(i.ID.ToString() + "," + i.Decripcion + "," + i.Estado);
+                sw.WriteLine(i.ID.ToString() + "," + i.Descripcion + "," + i.Estado);
             }
             sw.Close();
             byte[] filedata = System.IO.File.ReadAllBytes(filepath);
@@ -146,4 +138,14 @@ namespace FinanzasPersonales_G_.Controllers
             Response.AppendHeader("Content-Disposition", cd.ToString());
             return File(filedata, contentType);
         }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+    }
 }
