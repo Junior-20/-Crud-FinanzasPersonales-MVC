@@ -143,7 +143,7 @@ namespace FinanzasPersonales_G_.Controllers
         public ActionResult ExportaExcel()
         {
             string filename = "Egresos.csv";
-            string filepath = @"C:\Users\Alex Junior Valera\Desktop\reportes tra" + filename;
+            string filepath = @"C:\Users\Alex Junior Valera\Desktop\reportestra" + filename;
             StreamWriter sw = new StreamWriter(filepath);
             sw.Writeline("sep=,");
             sw.WriteLine("ID,Tipo_Egreso,Renglon_Egreso,Tipo_Pago,Decripcion,Estado"); //Encabezado 

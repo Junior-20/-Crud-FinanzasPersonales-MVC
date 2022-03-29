@@ -128,11 +128,11 @@ namespace FinanzasPersonales_G_.Controllers
         public ActionResult ExportaExcel()
         {
             string filename = "Egresos_Renglon.csv";
-            string filepath = @"C:\Users\Alex Junior Valera\Desktop\reportes tra" + filename;
+            string filepath = @"C:\Users\Alex Junior Valera\Desktop\reportestra" + filename;
             StreamWriter sw = new StreamWriter(filepath);
             sw.Writeline("sep=,");
             sw.WriteLine("ID,Descripcion,Estado"); //Encabezado 
-            foreach (var i in db.EGRESOes.ToList())
+            foreach (var i in db.EGRESO_RENGLON.ToList())
             {
                 sw.WriteLine(i.ID.ToString() + "," + i.Decripcion + "," + i.Estado);
             }
