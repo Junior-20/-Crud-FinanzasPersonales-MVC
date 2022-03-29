@@ -4,6 +4,7 @@
 <h2 class="text-center">Usuarios</h2>
 <p>
     @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+    @Html.ActionLink("Reporte", "exportaExcel", null, new { @class = "btn btn-success" })
 </p>
 <form method="get">
     <input type="text" id="Criterio" name="Criterio" />
@@ -34,30 +35,31 @@
 
     @foreach (var item in Model)
     {
-<tr>
-    <td>
-        @Html.DisplayFor(modelItem => item.Nombre)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Cedula)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Limite_Egreso)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Tipo_Persona)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Fecha_Corte)
-    </td>
-    <td>
-        @Html.DisplayFor(modelItem => item.Estado)
-    </td>
-    <td>
-        @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-info" }) |
-        @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-warning" }) |
-        @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
-    </td>
-</tr>}
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cedula)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Limite_Egreso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Tipo_Persona)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fecha_Corte)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Estado)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }, new { @class = "btn btn-info" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-warning" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.ID }, new { @class = "btn btn-danger" })
+            </td>
+        </tr>
+    }
 
 </table>

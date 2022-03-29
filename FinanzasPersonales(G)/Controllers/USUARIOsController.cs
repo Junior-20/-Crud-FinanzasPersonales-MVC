@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -125,7 +126,7 @@ namespace FinanzasPersonales_G_.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            catch
+            catch(Exception)
             {
                return RedirectToAction("Index");
             }
@@ -139,6 +140,33 @@ namespace FinanzasPersonales_G_.Controllers
                 db.Dispose();
             }
             base.Dispose(disposing);
+        }
+        public ActionResult exportaExcel()
+        {
+            string filename = "ReportesUsuarios.csv";
+            string filepath = @"C:\Users\Alex Junior Valera\Desktop\reportestra" + filename;
+            StreamWriter sw = new StreamWriter(filepath);
+            sw.WriteLine("sep=,");
+            sw.WriteLine("ID,Nombre,Cedula,Limite_Egreso,Tipo_Persona," +
+                "Fecha_Corte,Estado"); //Encabezado 
+            foreach (var i in db.USUARIOs.ToList())
+            {
+                sw.WriteLine(i.ID.ToString() + "," + i.Nombre+ "," + i.Cedula +
+                    "," + i.Limite_Egreso +
+                    "," + i.Tipo_Persona +
+                    "," + i.Fecha_Corte +
+                     "," + i.Estado);
+            }
+            sw.Close();
+            byte[] filedata = System.IO.File.ReadAllBytes(filepath);
+            string contentType = MimeMapping.GetMimeMapping(filepath);
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                FileName = filename,
+                Inline = false,
+            };
+            Response.AppendHeader("Content-Disposition", cd.ToString());
+            return File(filedata, contentType);
         }
         public static bool validaCedula(string pCedula)
         {
