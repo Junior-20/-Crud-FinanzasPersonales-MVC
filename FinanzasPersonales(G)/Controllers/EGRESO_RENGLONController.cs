@@ -125,5 +125,26 @@ namespace FinanzasPersonales_G_.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+        public ActionResult ExportaExcel()
+        {
+            string filename = "Egresos_Renglon.csv";
+            string filepath = @"C:\Users\Alex Junior Valera\Desktop\reportes tra" + filename;
+            StreamWriter sw = new StreamWriter(filepath);
+            sw.Writeline("sep=,");
+            sw.WriteLine("ID,Descripcion,Estado"); //Encabezado 
+            foreach (var i in db.EGRESOes.ToList())
+            {
+                sw.WriteLine(i.ID.ToString() + "," + i.Decripcion + "," + i.Estado);
+            }
+            sw.Close();
+            byte[] filedata = System.IO.File.ReadAllBytes(filepath);
+            string contentType = MimeMapping.GetMimeMapping(filepath);
+            var cd = new System.Net.Mime.ContentDisposition
+            {
+                FileName = filename,
+                Inline = false,
+            };
+            Response.AppendHeader("Content-Disposition", cd.ToString());
+            return File(filedata, contentType);
+        }
 }
