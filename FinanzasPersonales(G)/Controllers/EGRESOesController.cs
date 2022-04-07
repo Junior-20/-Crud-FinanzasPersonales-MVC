@@ -147,10 +147,13 @@ namespace FinanzasPersonales_G_.Controllers
             StreamWriter sw = new StreamWriter(filepath);
             sw.WriteLine("sep=,");
             sw.WriteLine("ID,Tipo_Egreso,Renglon_Egreso,Tipo_Pago,Decripcion,Estado"); //Encabezado 
-            foreach (var i in db.EGRESOes.ToList())
+            var eGRESOes = db.EGRESOes.Include(e => e.EGRESO_RENGLON).Include(e => e.EGRESO_TIPO).Include(e => e.PAGO_TIPO);
+            foreach (var i in eGRESOes.ToList())
             {
-                sw.WriteLine(i.ID.ToString() + "," + i.Tipo_Egreso + "," + i.Renglon_Egreso + "," + 
-                    i.Tipo_Pago + "," + i.Decripcion +
+                sw.WriteLine(i.ID.ToString() + "," + i.EGRESO_TIPO.Descripcion +
+                    "," + i.EGRESO_RENGLON.Descripcion + ","+
+                    i.PAGO_TIPO.Descripcion +
+                    "," + i.Decripcion +
                     "," + i.Estado);
             }
             sw.Close();

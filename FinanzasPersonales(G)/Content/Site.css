@@ -1,21 +1,22 @@
 ﻿body {
-    width:100%;
+    width: 100%;
     padding-top: 50px;
     padding-bottom: 20px;
 }
 
-h2{
-    font-weight:700;
+h2 {
+    font-weight: 700;
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
     margin: 0 auto;
     padding: 0;
     box-sizing: border-box;
-    max-width:1230px;
+    max-width: 1230px;
 }
+
 .carousel, .carousel-inner > .item > img {
-    height:500px;
+    height: 500px;
 }
 
 /* Override the default bootstrap behavior where horizontal description lists 
@@ -23,6 +24,10 @@ h2{
 */
 .dl-horizontal dt {
     white-space: normal;
+}
+.table {
+    background-color: #bbbbbb;
+    border: solid 1px #23527c;
 }
 
 /* Set width on the form input elements since they're 100% wide by default */
