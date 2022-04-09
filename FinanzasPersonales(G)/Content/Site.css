@@ -2,10 +2,20 @@
     width: 100%;
     padding-top: 50px;
     padding-bottom: 20px;
+    text-decoration-color:white;
 }
-
+ h4{
+     color:white;
+ }
+ p{
+     color:white;
+ }
+ label{
+     color:white;
+ }
 h2 {
     font-weight: 700;
+    color:white;
 }
 /* Set padding to keep content from hitting the edges */
 .body-content {
@@ -18,6 +28,7 @@ h2 {
 .carousel, .carousel-inner > .item > img {
     height: 500px;
 }
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 

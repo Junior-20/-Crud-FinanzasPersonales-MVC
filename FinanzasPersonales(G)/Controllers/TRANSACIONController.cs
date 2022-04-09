@@ -14,6 +14,7 @@ namespace FinanzasPersonales_G_.Controllers
     public class TRANSACIONController : Controller
     {
         private FinanzasPerEntities2 db = new FinanzasPerEntities2();
+        private object tRANSACION;
 
         // GET: TRANSACION
         [Authorize(Users = "Admin3030@gmail.com")]
@@ -58,6 +59,13 @@ namespace FinanzasPersonales_G_.Controllers
             if (ModelState.IsValid)
             {
                 db.TRANSACIONs.Add(tRANSACION);
+                db.SaveChanges();
+                USUARIO user = (from r in db.USUARIOs.Where
+               (a => a.ID == tRANSACION.Usuario)
+
+                                     select r).FirstOrDefault();
+
+                user.Limite_Egreso = (int)((user.Limite_Egreso) - (tRANSACION.Monto_Transacion));
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
@@ -123,7 +131,12 @@ namespace FinanzasPersonales_G_.Controllers
         public ActionResult DeleteConfirmed(int id)
         {
             TRANSACION tRANSACION = db.TRANSACIONs.Find(id);
-            db.TRANSACIONs.Remove(tRANSACION);
+            USUARIO user = (from r in db.USUARIOs.Where
+              (a => a.ID == tRANSACION.Usuario)
+
+                            select r).FirstOrDefault();
+
+            user.Limite_Egreso = (int)((user.Limite_Egreso) - (tRANSACION.Monto_Transacion));
             db.SaveChanges();
             return RedirectToAction("Index");
         }
