@@ -182,7 +182,6 @@
     <Compile Include="Controllers\INGRESO_TIPOController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\PAGO_TIPOController.cs" />
-    <Compile Include="Controllers\PROCESO_CORTEController.cs" />
     <Compile Include="Controllers\TRANSACIONController.cs" />
     <Compile Include="Controllers\USUARIOsController.cs" />
     <Compile Include="Global.asax.cs">
@@ -360,11 +359,6 @@
     <Content Include="Views\TRANSACION\Details.cshtml" />
     <Content Include="Views\TRANSACION\Edit.cshtml" />
     <Content Include="Views\TRANSACION\Index.cshtml" />
-    <Content Include="Views\PROCESO_CORTE\Create.cshtml" />
-    <Content Include="Views\PROCESO_CORTE\Delete.cshtml" />
-    <Content Include="Views\PROCESO_CORTE\Details.cshtml" />
-    <Content Include="Views\PROCESO_CORTE\Edit.cshtml" />
-    <Content Include="Views\PROCESO_CORTE\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
